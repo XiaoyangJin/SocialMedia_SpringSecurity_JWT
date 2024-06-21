@@ -25,12 +25,12 @@ This project is a secure social media application API built with Spring Boot. It
 ## API Endpoints
 ### Authentication and Registration
 - Register a new user
-POST /auth/register
+```POST /auth/register
 Content-Type: application/json
 {
   "username": "user",
   "password": "password"
-}
+}```
 
 - Authenticate a user and get a JWT
 POST /auth/authenticate
