@@ -30,7 +30,8 @@ Content-Type: application/json
 {
   "username": "user",
   "password": "password"
-}```
+}
+```
 
 - Authenticate a user and get a JWT
 POST /auth/authenticate
