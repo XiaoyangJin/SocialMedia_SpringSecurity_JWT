@@ -34,43 +34,49 @@ Content-Type: application/json
 ```
 
 - Authenticate a user and get a JWT
-POST /auth/authenticate
+```POST /auth/authenticate
 Content-Type: application/json
 {
   "username": "user",
   "password": "password"
 }
+```
 
 ### Post Management
 - Get all posts (authenticated users)
-GET /posts
+```GET /posts
 Authorization: Bearer <JWT>
+```
 
 - Get a specific post by ID (authenticated users)
-GET /posts/{id}
+```GET /posts/{id}
 Authorization: Bearer <JWT>
+```
 
 - Create a new post (admin only)
-POST /posts
+```POST /posts
 Content-Type: application/json
 Authorization: Bearer <JWT>
 {
   "title": "New Post",
   "content": "This is the content of the new post."
 }
+```
 
 - Update a post (admin only)
-PUT /posts/{id}
+```PUT /posts/{id}
 Content-Type: application/json
 Authorization: Bearer <JWT>
 {
   "title": "Updated Post",
   "content": "This is the updated content of the post."
 }
+```
 
 - Delete a post (admin only)
-DELETE /posts/{id}
+```DELETE /posts/{id}
 Authorization: Bearer <JWT>
+```
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
