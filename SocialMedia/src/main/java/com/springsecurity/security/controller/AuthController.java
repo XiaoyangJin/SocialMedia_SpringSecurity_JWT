@@ -31,18 +31,15 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
         try {
-            System.out.println("Attempting to authenticate user: " + authenticationRequest.getUsername());
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword())
             );
         } catch (Exception e) {
-            System.out.println("Authentication failed for user: " + authenticationRequest.getUsername());
             throw new Exception("Incorrect username or password", e);
         }
 
         final UserDetails userDetails = userService.loadUserByUsername(authenticationRequest.getUsername());
         final String jwt = jwtUtils.generateToken(userDetails);
-        System.out.println("User authenticated successfully, JWT generated");
 
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
