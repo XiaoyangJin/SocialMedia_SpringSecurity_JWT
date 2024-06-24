@@ -16,10 +16,6 @@ public class User implements UserDetails {
     private String password;
     private Set<GrantedAuthority> roles;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles.stream().map(role -> (GrantedAuthority) () -> role.getName()).collect(Collectors.toSet());
-    }
 
     @Override
     public boolean isAccountNonExpired() {
@@ -48,6 +44,11 @@ public class User implements UserDetails {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles;
     }
 
     @Override
