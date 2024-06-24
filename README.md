@@ -1,82 +1,33 @@
-# SocialMedia_SpringSecurity_JWT
-Secure Social Media API with Role-Based Access Control Using Spring Boot
+# Security_SpringSecurity_JWT
 
-## Overview
-
-This project is a secure social media application API built with Spring Boot. It features JWT-based authentication and role-based access control. Authenticated users can view all posts, while only users with the 'ADMIN' role can create, update, and delete posts.
+This project is a secure API application built with Spring Boot. It features JWT-based authentication and role-based access control.
 
 ## Features
 
-- JWT-based authentication
-- Role-based access control with Spring Security
-- CRUD operations on `Post` entity
-- Secure endpoints for creating, updating, and deleting posts (admin only)
-- User registration and authentication
+- **JWT Authentication**: Secure authentication using JSON Web Tokens (JWT).
+- **Role-based Access Control**: Different endpoints for users with `USER` and `ADMIN` roles.
+- **Secure Endpoints**:
+  - Public endpoint accessible to all.
+  - User endpoint accessible to authenticated users with `USER` role.
+  - Admin endpoint accessible to authenticated users with `ADMIN` role.
 
-## Technologies Used
+## Endpoints
 
-- Spring Boot
-- Spring Security
-- JWT (JSON Web Tokens)
-- JPA/Hibernate
-- MySQL (or any other relational database)
-- Maven
+### Public Endpoint
 
-## API Endpoints
-### Authentication and Registration
-- Register a new user
-```POST /auth/register
-Content-Type: application/json
-{
-  "username": "user",
-  "password": "password"
-}
-```
+- **URL**: `/api/public`
+- **Method**: `GET`
+- **Description**: Accessible by everyone.
 
-- Authenticate a user and get a JWT
-```POST /auth/authenticate
-Content-Type: application/json
-{
-  "username": "user",
-  "password": "password"
-}
-```
+### User Endpoint
 
-### Post Management
-- Get all posts (authenticated users)
-```GET /posts
-Authorization: Bearer <JWT>
-```
+- **URL**: `/api/user`
+- **Method**: `GET`
+- **Description**: Accessible by users with `USER` role.
 
-- Get a specific post by ID (authenticated users)
-```GET /posts/{id}
-Authorization: Bearer <JWT>
-```
+### Admin Endpoint
 
-- Create a new post (admin only)
-```POST /posts
-Content-Type: application/json
-Authorization: Bearer <JWT>
-{
-  "title": "New Post",
-  "content": "This is the content of the new post."
-}
-```
+- **URL**: `/api/admin`
+- **Method**: `GET`
+- **Description**: Accessible by users with `ADMIN` role.
 
-- Update a post (admin only)
-```PUT /posts/{id}
-Content-Type: application/json
-Authorization: Bearer <JWT>
-{
-  "title": "Updated Post",
-  "content": "This is the updated content of the post."
-}
-```
-
-- Delete a post (admin only)
-```DELETE /posts/{id}
-Authorization: Bearer <JWT>
-```
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
