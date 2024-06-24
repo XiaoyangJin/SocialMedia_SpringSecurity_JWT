@@ -1,4 +1,4 @@
-package com.springsecurity.SocialMedia.entity;
+package com.springsecurity.security.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

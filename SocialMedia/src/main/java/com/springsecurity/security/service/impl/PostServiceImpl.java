@@ -1,8 +1,7 @@
-package com.springsecurity.SocialMedia.service.impl;
+package com.springsecurity.security.service.impl;
 
-import com.springsecurity.SocialMedia.entity.Post;
-import com.springsecurity.SocialMedia.service.PostService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.springsecurity.security.entity.Post;
+import com.springsecurity.security.service.PostService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

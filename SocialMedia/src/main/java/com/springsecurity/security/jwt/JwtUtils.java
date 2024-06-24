@@ -1,4 +1,4 @@
-package com.springsecurity.SocialMedia.jwt;
+package com.springsecurity.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

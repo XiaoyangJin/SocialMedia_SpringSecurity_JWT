@@ -1,6 +1,6 @@
-package com.springsecurity.SocialMedia.security;
+package com.springsecurity.security.security;
 
-import com.springsecurity.SocialMedia.service.impl.MyUserDetailServiceImpl;
+import com.springsecurity.security.service.impl.MyUserDetailServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

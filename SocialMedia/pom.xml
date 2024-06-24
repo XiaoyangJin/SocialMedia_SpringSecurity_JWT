@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springsecurity</groupId>
-	<artifactId>SocialMedia</artifactId>
+	<artifactId>security</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SocialMedia</name>
 	<description>Secure Social Media API with Role-Based Access Control Using Spring Boot</description>

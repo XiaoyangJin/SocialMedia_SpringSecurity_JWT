@@ -1,6 +1,6 @@
-package com.springsecurity.SocialMedia.service;
+package com.springsecurity.security.service;
 
-import com.springsecurity.SocialMedia.entity.User;
+import com.springsecurity.security.entity.User;
 import org.springframework.stereotype.Service;
 
 @Service

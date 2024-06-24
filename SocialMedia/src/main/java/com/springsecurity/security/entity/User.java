@@ -1,15 +1,10 @@
-package com.springsecurity.SocialMedia.entity;
+package com.springsecurity.security.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class User implements UserDetails {
     private String username;

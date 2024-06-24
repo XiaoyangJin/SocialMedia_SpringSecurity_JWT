@@ -1,6 +1,6 @@
-package com.springsecurity.SocialMedia.service;
+package com.springsecurity.security.service;
 
-import com.springsecurity.SocialMedia.entity.Post;
+import com.springsecurity.security.entity.Post;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

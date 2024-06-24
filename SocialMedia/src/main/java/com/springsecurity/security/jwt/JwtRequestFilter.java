@@ -1,4 +1,4 @@
-package com.springsecurity.SocialMedia.jwt;
+package com.springsecurity.security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
