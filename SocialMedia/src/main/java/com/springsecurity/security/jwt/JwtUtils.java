@@ -17,10 +17,15 @@ import java.util.stream.Collectors;
 public class JwtUtils {
     private String SECRET_KEY = "secret_key_1234567890";
 
-    public String generateToken(String username) {
-        return Jwts.builder().setSubject(username).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
+    public String generateToken(UserDetails userDetails) {
+        Collection<? extends GrantedAuthority> roles = userDetails.getAuthorities();
+        return Jwts.builder()
+                .setSubject(userDetails.getUsername())
+                .claim("roles", roles.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10 hours
+                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .compact();
     }
 
     public String extractUsername(String token) {
