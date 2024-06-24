@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class User implements UserDetails {
     private String username;
     private String password;
-    private Set<Role> roles;
+    private Set<GrantedAuthority> roles;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -59,18 +59,18 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public Set<Role> getRoles() {
+    public Set<GrantedAuthority> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Set<GrantedAuthority> roles) {
         this.roles = roles;
     }
 
     public User() {
     }
 
-    public User(String username, String password, Set<Role> roles) {
+    public User(String username, String password, Set<GrantedAuthority> roles) {
         this.username = username;
         this.password = password;
         this.roles = roles;
